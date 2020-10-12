@@ -1,4 +1,4 @@
-# speciesDetection
+# Species Detection
 
 ## Context and challenge
 ...
