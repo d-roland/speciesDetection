@@ -1,1 +1,16 @@
 # speciesDetection
+
+## Context and challenge
+...
+
+## Approach
+...
+
+## Key results
+...
+
+## Next steps
+...
+
+## Acknowledgments
+...
