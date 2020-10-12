@@ -1,4 +1,4 @@
-# Species Detection
+# Deep-sea Species Detection
 
 ## Context and challenge
 ...
