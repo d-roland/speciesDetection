@@ -4,9 +4,9 @@ from PIL import Image
 import pandas as pd
 
 parser = ArgumentParser()
-parser.add_argument('-d', '--data_dir', default="$HOME/object-detection/Mask_RCNN/samples/crabe/dataset/Crabes_annotations/2014-2015/Thomas\ Day", type=str,help='directory containing annotation file')
-parser.add_argument('-i', '--image_dir', default="$HOME/object-detection/Mask_RCNN/samples/crabe/dataset/momar_2014-2015", type=str,help='directory containing images')
-parser.add_argument('-o', '--output_dir', default="$HOME/object-detection/Mask_RCNN/samples/crabe/dataset/", type=str,help='output directory to store the dataset')
+parser.add_argument('-d', '--data_dir', default="/home/jupyter/object-detection/Mask_RCNN/samples/crabe/dataset/Crabes_annotations/2014-2015/Thomas\ Day", type=str,help='directory containing annotation file')
+parser.add_argument('-i', '--image_dir', default="/home/jupyter/object-detection/Mask_RCNN/samples/crabe/dataset/momar_2014-2015", type=str,help='directory containing images')
+parser.add_argument('-o', '--output_dir', default="/home/jupyter/object-detection/Mask_RCNN/samples/crabe/dataset/", type=str,help='output directory to store the dataset')
 args = parser.parse_args()
 
 input_dir = os.path.normpath(args.data_dir) if args.data_dir else os.getcwd()
