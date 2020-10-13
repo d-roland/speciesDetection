@@ -11,7 +11,7 @@ Inside this new folder, two key elements have to be created:
 ## Data preparation
 Expert and citizen data come both in CSV files containing image name and annotations of each specimen, but their respective formats differ.\
 Also, some images come with multiple annotations of the same specimen (when more than one citizen annotated the image), requiring to select a single set of annotations.\
-Lastly, we needed to ensure that we feed our model only with images containing annotations.\
+Lastly, we needed to ensure that we feed our model only with images containing annotations.
 
 To easily convert the input files into JSON formats recognized by Mask_RCNN implementation, and tick the last 2 requirements mentioned above, we created some scripts doing the whole job.
 
@@ -26,6 +26,7 @@ python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i 
 ```
 The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
 The "-o" option for both scripts should typically correspond to the "dataset" folder created above.
+Some examples of output JSON files are provided here for reference, inside the "train" and "val" folders.
 
 
 ## Model training
