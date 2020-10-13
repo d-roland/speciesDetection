@@ -3,6 +3,8 @@
 ## Context and challenge
 ...
 
+![alt text](https://github.com/d-rolandp/speciesDetection/screenshots/master/src/common/images/icon48.png "Logo Title Text 1")
+
 ## Approach
 In order to perform object detection on custom specimen, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
 
@@ -10,7 +12,7 @@ As per the **metrics**, given we focused solely on object detection (approximate
 * **mAP** (mean Average Precision: mean proportion of our predictions that are correct): a strong mAP would imply less false positive, but may also imply that we miss some specimens.
 * **Recall** (how good we find all the positives, eg all the annotated specimens). A strong Recall is interesting if we want to find the most specimens, at all cost (eg with false positives also).
 
-It's worth noting that, in the case of object detection, these two metrics are computed for a certain threshold of IoU (Intersection over Union). The IoU represents the match between the predicted bounding box and the annotated one. Given the high variability of bounding box size and form between expert and citizen annotations, we decided to use two thresholds for the IoU: 0.5 (standard value) and 0.01 (high tolerance).
+It's worth noting that, in the case of object detection, these two metrics are computed for a certain threshold of **IoU** (Intersection over Union). The IoU represents the match between the predicted bounding box and the annotated one. Given the high variability of bounding box size and form between expert and citizen annotations, we decided to use two thresholds for the IoU: 0.5 (standard value) and 0.01 (high tolerance).
 
 ## Key results
 ...
