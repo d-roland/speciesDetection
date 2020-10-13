@@ -57,4 +57,5 @@ Example of prediction on a 2014 image annotated by expert: ground truth in green
 A huge thank you to [Marjolaine Matabos](https://annuaire.ifremer.fr/cv/20350/en/), Benthic ecologist at the Laboratoire Environnement Profond (PDG-REM-EEP-LEP), for very spontaneously sharing annotated examples of various species, as well as research papers providing more context on the project.
 
 Thanks also for the opportunity to spot a great Hydrolagus trolli :)
+![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/hydrolagus_trolli.png)
 
