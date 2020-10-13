@@ -25,19 +25,19 @@ It's worth noting that, in the case of object detection, these two metrics are c
 ## Key results
 After several rounds of training, of both the head and the internal layers of the Mask-RCNN model, we manage to obtain the following results:
 
-1. Model trained on 532 images with *expert* annotations from 2012-2013, 40 epoch head / 80 epoch all layers:
+1. Model trained on 532 images with *expert* annotations from 2012-2013, 40 epoch head / 80 epoch all layers:\
 Test set | mAP | Recall
 --- | --- | ---
 134 images with expert annotations from 2012-2013 | 68% (IoU 0.5) to 72% (IoU 0.01) | 72% (IoU 0.5) to 75% (IoU 0.01)
 95 images with citizen annotations | 12% (IoU 0.5) to 21% (IoU 0.01) | 18% (IoU 0.5) to 35% (IoU 0.01)
 
-2. Model trained on 448 images with *expert* annotations from 2014-2015, 30 epoch head / 60 epoch all layers:
+2. Model trained on 448 images with *expert* annotations from 2014-2015, 30 epoch head / 60 epoch all layers:\
 Test set | mAP | Recall
 --- | --- | ---
 113 images with expert annotations from 2014-2015 | 73% (IoU 0.5) to 78% (IoU 0.01) | 77% (IoU 0.5) to 80% (IoU 0.01)
 95 images with citizen annotations | 44% (IoU 0.5) to 48% (IoU 0.01) | 46% (IoU 0.5) to 51% (IoU 0.01)
 
-3. Model trained on 377 images with *citizen* annotations, 30 epoch head / 60 epoch all layers:
+3. Model trained on 377 images with *citizen* annotations, 30 epoch head / 60 epoch all layers:\
 Test set | mAP | Recall
 --- | --- | ---
 95 images with citizen annotations | 29% (IoU 0.5) to 36% (IoU 0.01) | 31% (IoU 0.5) to 38% (IoU 0.01)
