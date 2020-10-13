@@ -11,6 +11,7 @@ These videos are a crucial source of information for assessing natural variabili
 Recently, some researchers developped [crowdsourcing initiatives](https://www.deepseaspy.com/) in order to leverage untrained volunteers and scale the annotation process. But the quality of these annotations has to be compared to expert ones.\
 Given recent progress of Machine Learning algorithms, notably on object detection tasks, we decided to test some recent models on both expert and citizen annotations. 
 
+
 ## Approach
 In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, and able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
 
@@ -22,36 +23,56 @@ As per the **metrics**, given we focused solely on object detection (approximate
 
 It's worth noting that, in the case of object detection, these two metrics are computed for a certain threshold of **IoU** (Intersection over Union). The IoU represents the match between the predicted bounding box and the annotated one. Given the high variability of bounding box size and form between expert and citizen annotations, we decided to use two thresholds for the IoU: 0.5 (standard value) and 0.01 (high tolerance).
 
+
 ## Key results
 After several rounds of training, of both the head and the internal layers of the Mask-RCNN model, we manage to obtain the following results:
 
-1. Model trained on 532 images with *expert* annotations from 2012-2013, 40 epoch head / 80 epoch all layers:
+1. (Crabs) Model trained on 532 images with *expert* annotations from 2012-2013, 40 epoch head / 80 epoch all layers:
 
 Test set | mAP | Recall
 --- | --- | ---
 134 images with expert annotations from 2012-2013 | 68% (IoU 0.5) to 72% (IoU 0.01) | 72% (IoU 0.5) to 75% (IoU 0.01)
 95 images with citizen annotations | 12% (IoU 0.5) to 21% (IoU 0.01) | 18% (IoU 0.5) to 35% (IoU 0.01)
 
-2. Model trained on 448 images with *expert* annotations from 2014-2015, 30 epoch head / 60 epoch all layers:
+**Interpretation**: performance on test set (expert annotations) is not amazing but seems to have reached a plateau. Further fine tuning of hyperparameters may be required, as data augmentation didn't bring much improvement. Low performance on citizen annotations can be explained by three factors: difference between the two series of images (the citizen ones are more similar to expert images from 2014-2015), (lower) quality of citizen annotations, and also possible overfitting on training data.
+
+
+2. (Crabs) Model trained on 448 images with *expert* annotations from 2014-2015, 30 epoch head / 60 epoch all layers:
 
 Test set | mAP | Recall
 --- | --- | ---
 113 images with expert annotations from 2014-2015 | 73% (IoU 0.5) to 78% (IoU 0.01) | 77% (IoU 0.5) to 80% (IoU 0.01)
 95 images with citizen annotations | 44% (IoU 0.5) to 48% (IoU 0.01) | 46% (IoU 0.5) to 51% (IoU 0.01)
 
-3. Model trained on 377 images with *citizen* annotations, 30 epoch head / 60 epoch all layers:
+**Interpretation**: performance on test set is quite satisfactory. Increasing training time a bit might bring a few additional points, as well as hyperparameters tuning. The model trained on expert data is good enough to be used as benchmark of the quality of citizen annotations: lower quality on these annotations reflects their lower quality.
+
+
+3. (Crabs) Model trained on 377 images with *citizen* annotations, 30 epoch head / 60 epoch all layers:
 
 Test set | mAP | Recall
 --- | --- | ---
 95 images with citizen annotations | 29% (IoU 0.5) to 36% (IoU 0.01) | 31% (IoU 0.5) to 38% (IoU 0.01)
 113 images with expert annotations from 2014-2015 | 48% (IoU 0.5) to 53% (IoU 0.01) | 52% (IoU 0.5) to 55% (IoU 0.01)
 
+**Interpretation**: a higher performance obtained on test images annotated by experts may again reflect the higher quality of their annotations.
+
 Example of prediction on a 2014 image annotated by expert: ground truth in green, prediction in red, with score/IoU for each.
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/prediction_expert_2014.png)
 
+4. (Buccins) Model trained on 2656 images with *citizen* annotations, 20 epoch head:
+
+Test set | mAP | Recall
+--- | --- | ---
+664 images with citizen annotations | 42% (IoU 0.5) to 79% (IoU 0.01) | 51% (IoU 0.5) to 81% (IoU 0.01)
+
+**Interpretation**: even with small training (just 20 epoch of network head), a high quality of prediction is obtained. This is not surprising given the strong contrast between specimens and the background of images. A longer training time may deliver even better results.
+
+
 ## Next steps
-* test [Yolov4](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for object detection (alternative model to Mask-RCNN)
-* test [Rolo](https://github.com/Guanghan/ROLO) for object tracking
+* Leverage results and trained models to improve current annotation process
+* Test [Yolov4](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for object detection (alternative model to Mask-RCNN)
+* Test [Rolo](https://github.com/Guanghan/ROLO) for object tracking
+
 
 ## Acknowledgments
 A huge thank you to [Marjolaine Matabos](https://annuaire.ifremer.fr/cv/20350/en/), Benthic ecologist at the Laboratoire Environnement Profond (PDG-REM-EEP-LEP), for very spontaneously sharing annotated examples of various species, as well as research papers providing more context on the project.
