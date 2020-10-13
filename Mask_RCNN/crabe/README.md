@@ -2,7 +2,10 @@
 
 ## Model setup and training
 First step is to create a folder dedicated to the new class (here "crabe") inside the "sample" folder at the root of the Mast_RCNN repository.\
-Inside this new folder, three key elements have to be 
+Inside this new folder, three key elements have to be created:
+* 
+* 
+* 
 
 
 ## Data preparation
@@ -19,7 +22,7 @@ python prepare_dataset_expert.py -d folder_containing_annotations_CSV_files -i f
 
 For citizen images and annotations, execute the following:
 ```python
-python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset -m real
+python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset -m real_or_padding
 ```
 The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
 
