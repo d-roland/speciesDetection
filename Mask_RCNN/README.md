@@ -19,3 +19,5 @@ These weights have to be installed at the root of the cloned Mask_RCNN repositor
 ```python
 wget https://github.com/matterport/Mask_RCNN/releases/download/v2.1/mask_rcnn_balloon.h5
 ```
+
+The next step is to edit the code for the custom classes we want to create. This happens in the respective "buccin" and "crabe" folders, which have to be placed in the "sample" folder under Mask_RCNN root.
