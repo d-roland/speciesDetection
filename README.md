@@ -12,7 +12,9 @@ Recently, some researchers developped [crowdsourcing initiatives](https://www.de
 Given recent progress of Machine Learning algorithms, notably on object detection tasks, we decided to test some recent models on both expert and citizen annotations. 
 
 ## Approach
-In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
+In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, and able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
+
+Some data preparation was required, as expert and citizen annotations come in different format. In order to get comparable data, we decided to recreate the bounding box of each annotation as a 50 pixels square around the center of each manual annotation. Also, we needed to ensure that we used only images with annotations in order to train the model.
 
 As per the **metrics**, given we focused solely on object detection (approximate localization on images), we decided to focus on:
 * **mAP** (mean Average Precision: mean proportion of our predictions that are correct): a strong mAP would imply less false positive, but may also imply that we miss some specimens.
@@ -21,7 +23,12 @@ As per the **metrics**, given we focused solely on object detection (approximate
 It's worth noting that, in the case of object detection, these two metrics are computed for a certain threshold of **IoU** (Intersection over Union). The IoU represents the match between the predicted bounding box and the annotated one. Given the high variability of bounding box size and form between expert and citizen annotations, we decided to use two thresholds for the IoU: 0.5 (standard value) and 0.01 (high tolerance).
 
 ## Key results
-...
+After several rounds of training, of both the head and the internal layers of the Mask-RCNN model, we manage to obtain the following results:
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 ## Next steps
 * test [Yolov4](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for object detection (alternative model to Mask-RCNN)
