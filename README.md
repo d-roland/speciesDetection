@@ -17,7 +17,7 @@ In order to perform object detection on custom specimens, we used [Matterport im
 
 Some data preparation was required, as expert and citizen annotations come in different format. In order to get comparable data, we decided to recreate the bounding box of each annotation as a 50 pixels square around the center of each manual annotation. Also, we needed to ensure that we used only images with annotations in order to train the model.
 
-As per the **metrics**, given we focused solely on object detection (approximate localization on images), we decided to focus on:
+As per the **metrics**, given we focused solely on object detection (approximate localization on images), we decided to measure:
 * **mAP** (mean Average Precision: mean proportion of our predictions that are correct): a strong mAP would imply less false positive, but may also imply that we miss some specimens.
 * **Recall** (how good we find all the positives, eg all the annotated specimens). A strong Recall is interesting if we want to find the most specimens, at all cost (eg with false positives also).
 
