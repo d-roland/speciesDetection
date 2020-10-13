@@ -3,7 +3,7 @@
 ## Context and challenge
 ...
 
-![alt text](https://github.com/d-rolandp/speciesDetection/screenshots/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/d-rolandp/speciesDetection/raw/sample_expert_annotations.png)
 
 ## Approach
 In order to perform object detection on custom specimen, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
