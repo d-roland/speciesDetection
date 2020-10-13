@@ -1,7 +1,7 @@
 # Deep-sea Species Detection
 
 ## Context and challenge
-In order to study long-term temporal dynamics of vent communities, the Laboratoire Environnement Profond (Ifremer) leverages multidisciplinary seafloor observatories deployed in several target sites. The corresponding modules are equipped with cameras, programmed to record 20-min video sequences six times a day (02.00, 06.00, 10.00, 14.00, 18.00 and 22.00 UTC) with different zoom levels per sequence. Video sequences are later analyzed by experts to localize the species, and notably:
+In order to study long-term temporal dynamics of vent communities, the Laboratoire Environnement Profond (Ifremer) leverages multidisciplinary seafloor observatories deployed in several target sites. The corresponding modules are equipped with cameras, programmed to record 20-min video sequences six times a day (02.00, 06.00, 10.00, 14.00, 18.00 and 22.00 UTC) with different zoom levels per sequence. Video sequences are later analyzed by experts (researchers) to localize the species, and notably:
 * Crab Segonzacia mesatlantica from the Lucky Strike vent field (Mid-Atlantic Ridge, 1700m below sea level). Below is a sample image with 3 expert annotations illustrated by squared bounding boxes:
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_expert_annotations.png)
 * Buccinidae gastropods from the Grotto hydrothermal edifice (Main Endeavour Field, Juan de Fuca Ridge, 2200m below sea level). Below is a sample image with 11 citizen annotations:
@@ -13,7 +13,8 @@ Given recent progress of Machine Learning algorithms, notably on object detectio
 
 
 ## Approach
-In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, and able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
+In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). Althought this implementation allows more than object detection (namely, instance segmentation), its Keras and Tensorflow base is quite handy to use.\
+The base model is pretrained on Coco dataset, and able to recognize 80 basic shapes. We used transfer learning to fine tune it to our specific specimens.
 
 Some data preparation was required, as expert and citizen annotations come in different format. In order to get comparable data, we decided to recreate the bounding box of each annotation as a 50 pixels square around the center of each manual annotation. Also, we needed to ensure that we used only images with annotations in order to train the model.
 
