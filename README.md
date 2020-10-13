@@ -5,11 +5,11 @@
 * Crab Segonzacia mesatlantica from the Lucky Strike vent field (Mid-Atlantic Ridge, 1700m below sea level). Below is a sample image with 3 expert annotations illustrated by squared bounding boxes:
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_expert_annotations.png)
 * Buccinidae gastropods from the Grotto hydrothermal edifice (Main Endeavour Field, Juan de Fuca Ridge, 2200m below sea level). Below is a samplke image with 8 citizen annotations:
-![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_expert_annotations.png)
+![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_citizen_annotations.png)
 
 
 ## Approach
-In order to perform object detection on custom specimen, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
+In order to perform object detection on custom specimens, we used [Matterport implementation of Mask-RCNN](https://github.com/matterport/Mask_RCNN). The base model is pretrained on Coco dataset, able to recognize 80 basic shapes. We fine-tuned it to detect our specific specimens.
 
 As per the **metrics**, given we focused solely on object detection (approximate localization on images), we decided to focus on:
 * **mAP** (mean Average Precision: mean proportion of our predictions that are correct): a strong mAP would imply less false positive, but may also imply that we miss some specimens.
