@@ -6,7 +6,22 @@ Inside this new folder, three key elements have to be
 
 
 ## Data preparation
-...
+Expert and citizen data come both in CSV files containing image name and annotations of each specimen, but their respective formats differ.\
+Also, some images come with multiple annotations of the same specimen (when more than one citizen annotated the image), requiring to select a single set of annotations.\
+Lastly, we needed to ensure that we feed our model only with images containing annotations.\
+
+To easily convert the input files into JSON formats recognized by Mask_RCNN implementation, and tick the last 2 requirements mentioned above, we created some scripts doing the whole job.
+
+For expert images and annotations, execute the following:
+```python
+python prepare_dataset_expert.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset
+```
+
+For citizen images and annotations, execute the following:
+```python
+python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset -m real
+```
+The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
 
 
 ## Model training
@@ -18,4 +33,6 @@ python crabe.py train --dataset=dataset_folder --weights=coco
 ```
 
 ## Model evaluation
-...
+Matterport implementation of Mask_RCNN comes with handy notebooks to evaluate, or even inspect our models (and weights).
+
+For evaluation, we very slighlty adapted the original notebook to create [evaluate-crabe.ipynb](https://github.com/d-roland/speciesDetection/blob/main/Mask_RCNN/crabe/evaluate-crabe.ipynb).
