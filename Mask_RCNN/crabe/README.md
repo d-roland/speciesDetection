@@ -26,7 +26,7 @@ python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i 
 ```
 The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
 The "-o" option for both scripts should typically correspond to the "dataset" folder created above.
-Some examples of output JSON files are provided here for reference, inside the "train" and "val" folders.
+Some examples of output JSON files are provided here for reference (corresponding to the 2014-2015 CSVs), inside the "train" and "val" folders.
 
 
 ## Model training
