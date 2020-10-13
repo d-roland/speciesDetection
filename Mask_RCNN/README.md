@@ -1,4 +1,4 @@
-# Local installation of Matterport's Mask_RCNN implementation
+# Local installation of Matterport Mask_RCNN implementation
 
 ## Clone Mask_RCNN repository
 
