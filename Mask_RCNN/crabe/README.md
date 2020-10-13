@@ -2,10 +2,10 @@
 
 ## Model setup and training
 First step is to create a folder dedicated to the new class (here "crabe") inside the "sample" folder at the root of the Mast_RCNN repository.\
-Inside this new folder, three key elements have to be created:
-* 
-* 
-* 
+Inside this new folder, two key elements have to be created:
+
+* a [crabe.py](https://github.com/d-roland/speciesDetection/blob/main/Mask_RCNN/crabe/crabe.py) file, which is typically a copy of the original balloons.py file from the Mask_RCNN implementation, with all "balloons" mentions replaced by "crabe" ones.
+* a dataset folder, which will contain two subsequent "train" and "val" folders containing the images and annotations to be used (see Data preparation below). 
 
 
 ## Data preparation
@@ -25,6 +25,7 @@ For citizen images and annotations, execute the following:
 python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset -m real_or_padding
 ```
 The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
+The "-o" option for both scripts should typically correspond to the "dataset" folder created above.
 
 
 ## Model training
