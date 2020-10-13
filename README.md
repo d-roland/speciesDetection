@@ -2,10 +2,10 @@
 
 ## Context and challenge
 ...
-* Crab Segonzacia mesatlantica from the Lucky Strike vent field (Mid-Atlantic Ridge, 1700m below sea level). Below are 3 examples with expert annotations illustrated by squared bounding boxes:
+* Crab Segonzacia mesatlantica from the Lucky Strike vent field (Mid-Atlantic Ridge, 1700m below sea level). Below is a sample image with 3 expert annotations illustrated by squared bounding boxes:
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_expert_annotations.png)
-* Buccinidae gastropods from the Grotto hydrothermal edifice (Main Endeavour Field, Juan de Fuca Ridge, 2200m below sea level)
-
+* Buccinidae gastropods from the Grotto hydrothermal edifice (Main Endeavour Field, Juan de Fuca Ridge, 2200m below sea level). Below is a samplke image with 8 citizen annotations:
+![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_expert_annotations.png)
 
 
 ## Approach
