@@ -29,6 +29,7 @@ import skimage.draw
 import cv2
 import matplotlib.pyplot as plt
 import keras
+from imgaug import augmenters as iaa
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../../")
