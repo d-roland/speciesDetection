@@ -1,4 +1,4 @@
-# How to train & evaluate Mask-RCNN to detect Segonzacia mesatlantica crabs
+# Use Mask-RCNN to detect Segonzacia mesatlantica crabs
 
 ## Data preparation
 ...
