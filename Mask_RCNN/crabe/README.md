@@ -24,8 +24,8 @@ For citizen images and annotations, execute the following:
 ```python
 python prepare_dataset_citizen.py -d folder_containing_annotations_CSV_files -i folder_containing_corresponding_images -o output_folder_to_store_dataset -m real_or_padding
 ```
-The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).
-The "-o" option for both scripts should typically correspond to the "dataset" folder created above.
+The "-m" option for the citizen script can take two values: either real (we use the original bounding boxes created by the citizens) or padding (we create squared bounding boxes of 50 pixels side around the center of the original bounding box).\
+The "-o" option for both scripts should typically correspond to the "dataset" folder created above.\
 Some examples of output JSON files are provided here for reference (corresponding to the 2014-2015 CSVs), inside the "train" and "val" folders.
 
 
