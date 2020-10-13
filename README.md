@@ -8,7 +8,8 @@ In order to study long-term temporal dynamics of vent communities, the Laboratoi
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/sample_citizen_annotations.png)
 
 These videos are a crucial source of information for assessing natural variability and ecosystem responses to increasing human activity in the deep sea. But manually reviewing and annotating video sequences is a tedious and time-consuming process for experts, particularly as the quantity of recorded data dramatically increased over the past years.\
-Recently, some researchers developped [crowdsourcing initiatives](https://www.deepseaspy.com/) in order to leverage untrained volunteers and scale the annotation process. But the quality of these annotations has to be compared to expert ones.\
+Recently, some researchers developped [crowdsourcing initiatives](https://www.deepseaspy.com/) in order to leverage untrained volunteers and scale the annotation process. But the quality of these annotations has to be compared to expert ones.
+
 Given recent progress of Machine Learning algorithms, notably on object detection tasks, we decided to test some recent models on both expert and citizen annotations. 
 
 
