@@ -2,6 +2,8 @@
 
 ## Clone Mask_RCNN repository
 
+Preferably in a virtual environment.
+
 ```python
 git clone https://github.com/matterport/Mask_RCNN.git
 ```
