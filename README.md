@@ -69,7 +69,7 @@ Test set | mAP | Recall
 
 **Interpretation**: even with small training (just 20 epoch of network head), a high quality of prediction is obtained. This is not surprising given the strong contrast between specimens and the background of images. A longer training time may deliver even better results.
 
-Example of prediction on an image annotated by citizen: ground truth in green, prediction in red, with score/IoU for each.
+Example of prediction on an image annotated by citizen: ground truth in green, prediction in red, with score/IoU for each.\
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/prediction_citoyen_buccin.png)
 
 
