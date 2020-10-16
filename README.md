@@ -75,8 +75,8 @@ Example of prediction on an image annotated by citizen: ground truth in green, p
 
 ## Next steps
 * Leverage results and trained models to improve current annotation process
-* Test [Yolov4](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for object detection (alternative model to Mask-RCNN)
-* Test [Rolo](https://github.com/Guanghan/ROLO) for object tracking
+* Test [EfficientDet](https://github.com/xuannianz/EfficientDet) for object detection (alternative model to Mask-RCNN, higher performance on [Coco benchmark](https://paperswithcode.com/sota/object-detection-on-coco))
+* Test application of trained models on object tracking
 
 
 ## Acknowledgments
