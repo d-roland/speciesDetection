@@ -79,7 +79,7 @@ Test set | mAP | Recall
 266 images with citizen annotations | 41% (IoU 0.5) to 78% (IoU 0.01) | 47% (IoU 0.5) to 94% (IoU 0.01)
 
 
-**Interpretation**: thanks to high quality annotations and long training (30 epochs head + 30 epochs full network), the model get an almost perfect prediction performance on both metrics when evaluated on expert annotations. The drop in performance observed when evaluating on citizen annotations reveals the lower quality of these latter: 94% recall with IoU 1% but only 78% mean AP (many false positive created by citizens).
+**Interpretation**: thanks to high quality annotations and long training (30 epochs head + 30 epochs full network), the model get an almost perfect prediction performance on both metrics when evaluated on expert annotations. The drop in performance observed when evaluating on citizen annotations reveals the lower quality of these latter: 94% recall with IoU 1% but only 78% mean AP (many false positives created by citizens).
 
 Example of prediction on an image annotated by citizen: ground truth in green, prediction in red, with score/IoU for each.\
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/prediction_citoyen_buccin.png)
