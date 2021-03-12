@@ -66,18 +66,20 @@ Example of prediction on a 2014 image annotated by expert: ground truth in green
 Test set | mAP | Recall
 --- | --- | ---
 664 images with citizen annotations | 42% (IoU 0.5) to 79% (IoU 0.01) | 51% (IoU 0.5) to 81% (IoU 0.01)
+267 images with expert annotations | 28% (IoU 0.5) to 85% (IoU 0.01) | 42% (IoU 0.5) to 85% (IoU 0.01)
 
-**Interpretation**: even with small training (just 20 epoch of network head), a high quality of prediction is obtained. This is not surprising given the strong contrast between specimens and the background of images. A longer training time may deliver even better results.
+**Interpretation**: even with small training (just 20 epoch of network head), a high quality of prediction is obtained on the citizen annotations. This is not surprising given the strong contrast between specimens and the background of images. A longer training time may deliver even better results. However prediction performance drops when evaluating on expert annotations: this reveals the lower quality of citizen annotations (85% precision and recall with only 1% overlap between citizen and expert annotation), and the difficulty of citizen-trained model to generalize to accurate predictions. 
 
 
 5. (Buccins) Model trained on 1061 images (zoom angle) with *expert* annotations, 30 epoch head:
 
 Test set | mAP | Recall
 --- | --- | ---
-664 images with citizen annotations | 91% (IoU 0.5) to 94% (IoU 0.01) | 92% (IoU 0.5) to 95% (IoU 0.01)
+267 images with expert annotations | 91% (IoU 0.5) to 94% (IoU 0.01) | 92% (IoU 0.5) to 95% (IoU 0.01)
+266 images with citizen annotations | 41% (IoU 0.5) to 78% (IoU 0.01) | 47% (IoU 0.5) to 94% (IoU 0.01)
 
 
-**Interpretation**: thanks to high quality annotations and long training (30 epochs head + 30 epochs full network), the model get an almost perfect prediction performance on both metrics.
+**Interpretation**: thanks to high quality annotations and long training (30 epochs head + 30 epochs full network), the model get an almost perfect prediction performance on both metrics when evaluated on expert annotations. The drop in performance observed when evaluating on citizen annotations reveals the lower quality of these latter: 94% recall with IoU 1% but only 78% mean AP (many false positive created by citizens).
 
 Example of prediction on an image annotated by citizen: ground truth in green, prediction in red, with score/IoU for each.\
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/prediction_citoyen_buccin.png)
