@@ -69,6 +69,16 @@ Test set | mAP | Recall
 
 **Interpretation**: even with small training (just 20 epoch of network head), a high quality of prediction is obtained. This is not surprising given the strong contrast between specimens and the background of images. A longer training time may deliver even better results.
 
+
+5. (Buccins) Model trained on 2656 images with *expert* annotations, 30 epoch head:
+
+Test set | mAP | Recall
+--- | --- | ---
+664 images with citizen annotations | 91% (IoU 0.5) to 94% (IoU 0.01) | 92% (IoU 0.5) to 95% (IoU 0.01)
+
+
+**Interpretation**: thanks to high quality annotation and long training (30 epochs head + 30 epochs full network), the model get an almost perfect prediction performance on both metrics.
+
 Example of prediction on an image annotated by citizen: ground truth in green, prediction in red, with score/IoU for each.\
 ![alt text](https://github.com/d-roland/speciesDetection/raw/main/images/prediction_citoyen_buccin.png)
 
